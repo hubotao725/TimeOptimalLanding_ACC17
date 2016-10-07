@@ -3,6 +3,7 @@ clear all;
 close all;
 addpath('G:\Downloads\casadi-matlabR2014a-v2.4.1-Debug');
 addpath('C:\Users\hubot\Downloads\casadi-matlabR2014a-v2.4.1-Debug');
+addpath('/home/botao/Downloads/casadi-matlabR2014a-v2.4.1');
 import casadi.*
 
 N=201;
@@ -95,3 +96,5 @@ PlotResult3(pltY,pltZ,pltTheta,N,h2,f_opt/(N-1));
 
 h3=figure(8);
 PlotGif(pltY,pltZ,pltTheta,N,Ts,h3);
+
+gres=CollisionCheck(pltY,pltZ,pltTheta,f_opt/(N-1),N);
