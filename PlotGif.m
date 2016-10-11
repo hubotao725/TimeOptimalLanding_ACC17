@@ -9,7 +9,7 @@ LineWidth=1.5;
 IMG_WIDTH=7;
 IMG_HEIGHT=6;
 lastStep=1;
-filename='horizontal6.gif';
+filename='vertical.gif';
 cl=colormap(jet(N));
 step=5;
 

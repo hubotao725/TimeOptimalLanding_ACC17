@@ -97,4 +97,6 @@ PlotResult3(pltY,pltZ,pltTheta,N,h2,f_opt/(N-1));
 h3=figure(8);
 PlotGif(pltY,pltZ,pltTheta,N,Ts,h3);
 
+h4=figure(9);
+PlotCloseGif(pltY,pltZ,pltTheta,N,Ts,h4);
 gres=CollisionCheck(pltY,pltZ,pltTheta,f_opt/(N-1),N);

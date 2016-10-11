@@ -43,6 +43,6 @@ cpos(3)=0.75*cpos(3);
 c.Position = cpos;
 c.Position(1)=c.Position(1)+0.1;
 print -dpdf trajectory.pdf
-
+print -djpeg trajectory.jpg
 end
 
