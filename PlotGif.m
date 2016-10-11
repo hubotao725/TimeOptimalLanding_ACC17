@@ -32,7 +32,8 @@ cpos=c.Position;
 
 cpos(3)=0.75*cpos(3);
 c.Position = cpos;
-
+v=VideoWriter('vertical landing.avi');
+open(v);
 for i=1:step:N
      
      cla(h);
@@ -41,7 +42,7 @@ for i=1:step:N
     curStep=floor(10);
     plot(pltY(1:i,1),pltZ(1:i,1),'r');
     DrawQuad2D(pltY(i,1),pltZ(i,1),pltTheta(i,1),cl(i,:));
-    DrawPlat(-0.3*i*Ts,0,.1*sin(i*Ts),'b');
+    DrawPlat(-0.3*i*Ts,0,1*sin(i*Ts),'b');
     for j=1:curStep:i
         DrawQuad2D(pltY(j,1),pltZ(j,1),pltTheta(j,1),cl(j,:));
     end
@@ -58,8 +59,10 @@ for i=1:step:N
     else
         imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime',0.1);
     end
+    writeVideo(v,im);
     pause(0.01);
 end
 
+close(v);
 end
 
