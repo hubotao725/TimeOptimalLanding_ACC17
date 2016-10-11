@@ -39,6 +39,8 @@ c.Position=cpos+[0.1 -0.05 0 0];
 ax = gca;
 axpos = ax.Position;
 ax.Position = axpos+[0 0.05 0 0];
+v=VideoWriter('horizontalLanding.avi');
+open(v);
 for i=1:step:N
     
     cla(h);
@@ -67,8 +69,9 @@ for i=1:step:N
     else
         imwrite(imind,cm,filename,'gif','WriteMode','append','DelayTime',0.1);
     end
+    writeVideo(v,im);
     pause(0.01);
 end
-
+close(v);
 end
 

@@ -90,3 +90,5 @@ h2=figure(7);
 PlotResult3(pltY,pltZ,pltTheta,N,h2,f_opt/(N-1));
 h3=figure(8);
 PlotGif(pltY,pltZ,pltTheta,N,f_opt/(N-1),h3);
+h4=figure(9);
+PlotCloseGif(pltY,pltZ,pltTheta,N,f_opt/(N-1),h4);
