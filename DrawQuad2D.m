@@ -3,7 +3,7 @@ function DrawQuad2D(x,z,theta,colorSel)
 %x is the horizontal position
 %z is the height
 %theta is the tilting angle
-LineWidth=0.25;
+LineWidth=1.5;
 n=length(x);
 LENGTH=length(-0.25:0.05:0.25);
 quadLine=[-0.25:0.05:0.25;...

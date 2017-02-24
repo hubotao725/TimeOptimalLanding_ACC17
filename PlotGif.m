@@ -11,7 +11,7 @@ lastStep=1;
 filename='horizontal6.gif';
 cl=colormap(jet(N));
 step=5;
-FontSize=7;
+FontSize=14;
 xlabel('x position (m)','FontSize',FontSize);
 ylabel('z position (m)','FontSize',FontSize);
 title('Time optimal maneuver','FontSize',FontSize);
@@ -24,16 +24,14 @@ set(gca,'FontSize',FontSize);
 c=colorbar;
 c.Limits=[0 (N-1)*Ts];
 caxis([0 (N-1)*Ts]);
-c.Label.String='Time (s)';
+c.Label.String='Time (s)'; 
 c.Label.FontSize=FontSize;
-c.Location='southoutside';
 cpos=c.Position;
-
-cpos(3)=.75*cpos(3);
+cpos(3)=.25*cpos(3);
 cpos(4)=0.5*cpos(4);
-c.Position=cpos+[0.1 -0.05 0 0];
- 
-    xlim([-1,8]);
+cpos(2)=cpos(2)+0.2;
+c.Position=cpos;
+    xlim([-1,10]);
     ylim([-0.5,5.5]);
     
 ax = gca;
@@ -57,8 +55,7 @@ for i=1:step:N
     
     axis equal
     hold off;
-    
-    xlim([-1,8]);
+    xlim([-1,10]);
     ylim([-0.5,5.5]);
     
     frame=getframe(gcf);

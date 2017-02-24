@@ -20,7 +20,7 @@ plot(pltY(1:N,1),pltZ(1:N,1),'k','LineWidth',1.5);
 hold off
 
 axis equal
-xlim([-1,8]);
+xlim([-1,7]);
 ylim([-0.5,5.5]);
 FontSize=7;
 xlabel('x position (m)','FontSize',FontSize);
@@ -48,7 +48,6 @@ cpos(3)=1.2*cpos(3);
 cpos(4)=0.5*cpos(4);
 c.Position=cpos+[-0.05 -0.12 0 0];
 print -dpdf trajectory.pdf
-print -djpeg trajectory.jpg
 
 end
 

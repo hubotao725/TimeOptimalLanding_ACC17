@@ -1,4 +1,4 @@
-function PlotGif(pltY,pltZ,pltTheta,N,Ts,h)
+function PlotCloseGif(pltY,pltZ,pltTheta,N,Ts,h)
 %PlotResult this function will plot the result of the velocity
 %yres is the result of the optimal solution. It is a matrix.
 %zres is the result of the optimal solution. It is a matrix.
@@ -11,7 +11,7 @@ lastStep=1;
 filename='horizontal6.gif';
 cl=colormap(jet(N));
 step=1;
-FontSize=7;
+FontSize=14;
 xlabel('x position (m)','FontSize',FontSize);
 ylabel('z position (m)','FontSize',FontSize);
 title('Time optimal maneuver','FontSize',FontSize);
@@ -32,7 +32,7 @@ cpos=c.Position;
 cpos(3)=.75*cpos(3);
 cpos(4)=0.5*cpos(4);
 c.Position=cpos+[0.1 -0.05 0 0];
- 
+%  
     xlim([-1,8]);
     ylim([-0.5,5.5]);
     
@@ -55,8 +55,8 @@ for i=N-20*step:step:N
     axis equal
     hold off;
     
-    xlim([6,7]);
-    ylim([-0.2,.5]);
+    xlim([5,7]);
+    ylim([-0.5,.5]);
     
     frame=getframe(gcf);
     im=frame2im(frame);

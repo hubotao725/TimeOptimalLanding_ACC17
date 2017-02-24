@@ -49,6 +49,43 @@ xlim([0 5]);
 ylim([0 5]);
 set(gca,'FontSize',FontSize);
 print -dpdf maneuver.pdf
+h=figure(12);
+LineWidth=1.5;
+IMG_WIDTH=8;
+IMG_HEIGHT=7;
+FontSize=9;
+step=1;
+x0=70;
+y0=40;
+width=270;
+height=250;
+set(gca,'units','points','position',[x0,y0,width,height]);
+Ts=f_opt/(N-1);
+F_t=full(res.g(5*N-4:6*N-5));
+set(h,'paperunits','centimeters');
+set(h,'papersize',[IMG_WIDTH IMG_HEIGHT]);
+set(h,'paperposition',[0,0,IMG_WIDTH,IMG_HEIGHT]);
+[hAx,hy1,hy2]=plotyy(Ts*(1:step:N),F_t(1:N),Ts*(1:step:N),pltTheta(1:N,2));
+xlabel('Time (s)');
+ylabel('Control input (N/kg)');
+title('Control input u_1, u_2 with respect to time');
+hy1.LineStyle='--';
+hy1.LineWidth=LineWidth;
+hy2.LineWidth=LineWidth; 
+ 
+set(hAx(1),'YTick',[0 5 10 15 20]);
+set(hAx(2),'YTick',[-10 -5 0 5 10]); 
+
+ylabel(hAx(1),'control input u_1 (N)','FontSize',FontSize);
+ylabel(hAx(2),'control input u_2 (rad/s)','FontSize',FontSize);
+h2=legend('u_1','u_2','Location','best');
+pos=get(h2,'Position');
+set(h2,'Position',pos+[-0.10 +0.02 0 0]);
+ 
+xlabh=get(gca,'XLabel');
+set(xlabh,'Position',get(xlabh,'Position')+[0 0.05 0]);
+set(gca,'FontSize',FontSize);
+print -dpdf thrustinput.pdf
 h=figure(3);
 
 LineWidth=1.5;
@@ -78,7 +115,7 @@ a.HeadWidth=5;
 a.HeadLength=5;
 set(gca,'FontSize',FontSize);
 set(gca,'FontSize',FontSize);
-print -dpdf thrustinput.pdf
+print -dpdf thrustinput2.pdf
 figure(4);
 plot(pltY(1:N,1),pltZ(1:N,1));
 title('thrust  time optimal');
@@ -92,3 +129,5 @@ h3=figure(8);
 PlotGif(pltY,pltZ,pltTheta,N,f_opt/(N-1),h3);
 h4=figure(9);
 PlotCloseGif(pltY,pltZ,pltTheta,N,f_opt/(N-1),h4);
+h5=figure(10);
+PlotClosePic(pltY,pltZ,pltTheta,N,f_opt/(N-1),h5);
