@@ -15,7 +15,7 @@ set(h,'paperunits','centimeters');
 set(h,'papersize',[IMG_WIDTH IMG_HEIGHT]);
 set(h,'paperposition',[0,0,IMG_WIDTH,IMG_HEIGHT]);
 plot(Ts*(1:step:N),pltTheta(1:step:N,2),'r','LineWidth',LineWidth);
-title('Rotation speed','FontSize',FontSize);
+title('Control input 2','FontSize',FontSize);
 xlabel('Time (s)','FontSize',FontSize);
 ylabel('Rotation speed (rad/s)','FontSize',FontSize);
 xlim([0 (N-1)*Ts]);

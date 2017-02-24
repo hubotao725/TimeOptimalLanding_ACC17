@@ -14,7 +14,7 @@ filename='horizontal6.gif';
 cl=colormap(jet(N));
 step=1;
 
-FontSize=7;
+FontSize=14;
 xlabel('x position (m)','FontSize',FontSize);
 ylabel('z position (m)','FontSize',FontSize);
 title('Time optimal maneuver','FontSize',FontSize);
@@ -49,7 +49,7 @@ for i=N-20*step:step:N
 %     end
     axis equal 
     hold off;
-    xlim([-.2,.7]);
+    xlim([-.5,.5]);
     ylim([0.7,1.6]);
 
     frame=getframe(gcf);

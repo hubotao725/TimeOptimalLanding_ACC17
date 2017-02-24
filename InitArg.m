@@ -3,11 +3,15 @@ function arg=InitArg(inputArg,N)
 %inputArg is an empty structure
 %arg is a structure
 arg=inputArg;
-arg.x0=ones(8*N+1,1);
+
+fileData=load('x_optres.mat');
+x_opt=fileData.x_opt;
+arg.x0=x_opt;
+
 arg.lbx=[-1*ones(N,1);
-        -inf*ones(N,1);-1*ones(N,1);-inf*ones(N,1);-2*pi*ones(N,1);-inf*ones(2*N,1);-10*ones(N,1);0];
+        -inf*ones(N,1);-1*ones(N,1);-inf*ones(N,1);-pi*ones(N,1);-inf*ones(2*N,1);-10*ones(N,1);0];
 arg.ubx=[1*ones(N,1);
-         inf*ones(N,1);5*ones(N,1);inf*ones(N,1);2*pi*ones(N,1);inf*ones(2*N,1);10*ones(N,1);inf];
+         inf*ones(N,1);5*ones(N,1);inf*ones(N,1);pi*ones(N,1);inf*ones(2*N,1);10*ones(N,1);inf];
 arg.lbg=[zeros(5*(N-1),1);
         1*ones(N,1); 
         zeros(N,1);

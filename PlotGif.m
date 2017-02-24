@@ -13,7 +13,7 @@ filename='vertical.gif';
 cl=colormap(jet(N));
 step=5;
 
-FontSize=7;
+FontSize=14;
 xlabel('x position (m)','FontSize',FontSize);
 ylabel('z position (m)','FontSize',FontSize);
 title('Time optimal maneuver','FontSize',FontSize);
